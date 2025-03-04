@@ -26,7 +26,9 @@ body {
 }
 
 @theme {
+  --color-orange-vivid-400: #F9703E;
   --color-orange-vivid-500: #F35627;
+  --color-orange-vivid-800: #AD1D07;
 
   --color-yellow-050: #FFFAEB;
   --color-yellow-100: #FCEFC7;
