@@ -1,14 +1,8 @@
 
-import { Lateef } from "next/font/google";
 import { WarningBox } from "../ui/shared/warning-box";
 import Footer from "../ui/layout/footer";
-
-const lateef = Lateef({
-  weight: ['500'],
-  style: 'normal',
-  subsets: ['latin'],
-  variable: '--font-lateef'
-})
+import { lateef } from "../ui/fonts";
+import { Card } from "../ui/shared/card";
 
 export default function Home() {
   return (
@@ -21,22 +15,23 @@ export default function Home() {
       </div>
 
       <div className="flex flex-wrap justify-center w-full">
-        <div className="max-w-6xl grow border-2 border-orange-vivid-800 mt-8 rounded-xl">
-          <h2 className={`bg-orange-vivid-400 py-2 px-5 text-white font-bold text-3xl rounded-t-lg ${lateef.className}`}>Your Upcoming Events</h2>
-          <div>
-            <div className="py-2 px-5">
-              <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
-              <div>
-                April 23, 2025 | Edmonton
+        <div className="max-w-6xl w-full">
+          <Card title={"Your Upcoming Events"}>
+            <div>
+              <div className="py-2 px-5">
+                <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
+                <div>
+                  April 23, 2025 | Edmonton
+                </div>
+              </div>
+              <div className="py-2 px-5">
+                <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
+                <div>
+                  April 23, 2025 | Edmonton
+                </div>
               </div>
             </div>
-            <div className="py-2 px-5">
-              <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
-              <div>
-                April 23, 2025 | Edmonton
-              </div>
-            </div>
-          </div>
+          </Card>
         </div>
 
         <div className="bg-orange-vivid-050 w-full mt-8 justify-center flex">
@@ -60,9 +55,8 @@ export default function Home() {
       <div className="flex flex-wrap justify-center w-full">
         <div className="flex max-w-6xl grow gap-3">
 
-          <div className="w-[50%] border-2 border-orange-vivid-800 mt-8 rounded-xl">
-            <div>
-              <h2 className={`bg-orange-vivid-400 py-2 px-5 text-white font-bold text-3xl rounded-t-lg ${lateef.className}`}>News</h2>
+          <div className="w-[50%]">
+            <Card title="News">
               <div>
                 <div className="py-2 px-5">
                   <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
@@ -77,12 +71,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
 
-          <div className="w-[50%] border-2 border-orange-vivid-800 mt-8 rounded-xl">
-            <div>
-              <h2 className={`bg-orange-vivid-400 py-2 px-5 text-white font-bold text-3xl rounded-t-lg ${lateef.className}`}>Events</h2>
+          <div className="w-[50%]">
+            <Card title="Events">
               <div>
                 <div className="py-2 px-5">
                   <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
@@ -97,7 +90,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
 
