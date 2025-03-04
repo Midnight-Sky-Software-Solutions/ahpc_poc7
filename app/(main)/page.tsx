@@ -18,13 +18,13 @@ export default function Home() {
         <div className="max-w-6xl w-full">
           <Card title={"Your Upcoming Events"}>
             <div>
-              <div className="py-2 px-5">
+              <div>
                 <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
                 <div>
                   April 23, 2025 | Edmonton
                 </div>
               </div>
-              <div className="py-2 px-5">
+              <div>
                 <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
                 <div>
                   April 23, 2025 | Edmonton
@@ -58,13 +58,13 @@ export default function Home() {
           <div className="w-[50%]">
             <Card title="News">
               <div>
-                <div className="py-2 px-5">
+                <div>
                   <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
                   <div>
                     April 23, 2025 | Edmonton
                   </div>
                 </div>
-                <div className="py-2 px-5">
+                <div>
                   <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
                   <div>
                     April 23, 2025 | Edmonton
@@ -77,13 +77,13 @@ export default function Home() {
           <div className="w-[50%]">
             <Card title="Events">
               <div>
-                <div className="py-2 px-5">
+                <div>
                   <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
                   <div>
                     April 23, 2025 | Edmonton
                   </div>
                 </div>
-                <div className="py-2 px-5">
+                <div>
                   <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
                   <div>
                     April 23, 2025 | Edmonton
