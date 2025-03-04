@@ -8,11 +8,7 @@ export default function MainLayout({
   return (
     <>
       <Header />
-      <div className="flex justify-center">
-        <div className="max-w-6xl w-full">
-          { children }
-        </div>
-      </div>
+      { children }
     </>
   );
 }
