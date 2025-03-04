@@ -63,6 +63,53 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="flex flex-wrap justify-center w-full">
+        <div className="flex max-w-6xl grow gap-3">
+
+          <div className="w-[50%] border-2 border-orange-vivid-800 mt-8 rounded-xl">
+            <div>
+              <h2 className={`bg-orange-vivid-400 py-2 px-5 text-white font-bold text-3xl rounded-t-lg ${lateef.className}`}>News</h2>
+              <div>
+                <div className="py-2 px-5">
+                  <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
+                  <div>
+                    April 23, 2025 | Edmonton
+                  </div>
+                </div>
+                <div className="py-2 px-5">
+                  <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
+                  <div>
+                    April 23, 2025 | Edmonton
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-[50%] border-2 border-orange-vivid-800 mt-8 rounded-xl">
+            <div>
+              <h2 className={`bg-orange-vivid-400 py-2 px-5 text-white font-bold text-3xl rounded-t-lg ${lateef.className}`}>Events</h2>
+              <div>
+                <div className="py-2 px-5">
+                  <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
+                  <div>
+                    April 23, 2025 | Edmonton
+                  </div>
+                </div>
+                <div className="py-2 px-5">
+                  <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
+                  <div>
+                    April 23, 2025 | Edmonton
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </>
   );
 }
