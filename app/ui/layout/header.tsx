@@ -1,3 +1,4 @@
+import { UserCircleIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 
 const navItems: { text: string, href: string }[] = [
@@ -28,7 +29,7 @@ export default function Header() {
             AHPC
           </Link>
         </div>
-        <ul className="flex gap-12 text-lg font-semibold">
+        <ul className="flex gap-12 text-lg font-semibold grow">
           {navItems.map(item => (
             <li key={item.text}>
               <Link href={item.href}>
@@ -37,8 +38,19 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <div>
-
+        <div className="flex items-center">
+          <div className="flex-cols pr-2">
+            <div className="text-sm text-right">
+              Alex Johnston
+            </div>
+            <div className="text-xs text-right">
+              Regular Member
+            </div>
+          </div>
+          
+          <div className="w-16">
+            <UserCircleIcon />
+          </div>
         </div>
       </div>
     </div>
