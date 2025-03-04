@@ -39,7 +39,7 @@ export default function Header() {
           ))}
         </ul>
         <div className="flex items-center">
-          <div className="flex-cols pr-2">
+          <div className="flex flex-col gap-1 pr-2">
             <div className="text-sm text-right">
               Alex Johnston
             </div>
