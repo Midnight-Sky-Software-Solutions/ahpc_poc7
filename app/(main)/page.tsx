@@ -1,6 +1,7 @@
 
 import { Lateef } from "next/font/google";
 import { WarningBox } from "../ui/shared/warning-box";
+import Footer from "../ui/layout/footer";
 
 const lateef = Lateef({
   weight: ['500'],
@@ -100,11 +101,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center w-full bg-cool-grey-100 mt-5 h-20">
-          <div className="max-w-6xl grow pt-5">
-            <p className="text-sm">© 2025 Midnight Sky Software Solutions</p>
-          </div>
-        </div>
+        <Footer />
 
       </div>
 
