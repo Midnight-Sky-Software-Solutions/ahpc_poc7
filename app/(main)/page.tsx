@@ -1,6 +1,6 @@
 
-import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
 import { Lateef } from "next/font/google";
+import { WarningBox } from "../ui/shared/warning-box";
 
 const lateef = Lateef({
   weight: ['500'],
@@ -15,15 +15,7 @@ export default function Home() {
       <div className="flex flex-wrap justify-center w-full">
         <div className="max-w-6xl grow">
           <h2 className={`text-5xl py-5 ${lateef.className}`}>Home</h2>
-          <div className="flex bg-yellow-100 border-yellow-500 border-2 rounded-lg p-3 items-center gap-3">
-            <div className="w-10 text-yellow-500">
-              <ExclamationCircleIcon />
-            </div>
-            <div className="grow">
-              You have an oustanding invoice of <strong>$400.00</strong>.
-            </div>
-            <button className="bg-yellow-500 text-white p-2 rounded-sm">Pay Now</button>
-          </div>
+          <WarningBox>You have an oustanding invoice of <strong>$400.00</strong>.</WarningBox>
         </div>
       </div>
 
