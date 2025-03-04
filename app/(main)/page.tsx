@@ -48,8 +48,8 @@ export default function Home() {
 
         <div className="bg-orange-vivid-050 w-full mt-8 justify-center flex">
           <div className="max-w-6xl grow flex ">
-            <div className="w-[50%] flex flex-col justify-center px-3">
-              <h3 className={`text-4xl py-5 ${lateef.className}`}>About Us</h3>
+            <div className="w-[50%] flex flex-col justify-center px-5">
+              <h3 className={`text-4xl pb-5 ${lateef.className}`}>About Us</h3>
               <p>
                 We are really passionate about pizza! The Association of Home Pizza Chefs brings together a community of pizza chefs who love their own brand.
               </p>
@@ -105,6 +105,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap justify-center w-full bg-cool-grey-100 mt-5 h-20">
+          <div className="max-w-6xl grow pt-5">
+            <p className="text-sm">© 2025 Midnight Sky Software Solutions</p>
           </div>
         </div>
 
