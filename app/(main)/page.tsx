@@ -3,6 +3,7 @@ import { WarningBox } from "../ui/shared/warning-box";
 import Footer from "../ui/layout/footer";
 import { lateef } from "../ui/fonts";
 import { Card } from "../ui/shared/card";
+import { UpcomingEvents } from "@/app/ui/dashboard/upcoming-events";
 
 export default function Home() {
   return (
@@ -16,22 +17,7 @@ export default function Home() {
 
       <div className="flex flex-wrap justify-center w-full">
         <div className="max-w-6xl w-full">
-          <Card title={"Your Upcoming Events"}>
-            <div>
-              <div>
-                <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
-                <div>
-                  April 23, 2025 | Edmonton
-                </div>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
-                <div>
-                  April 23, 2025 | Edmonton
-                </div>
-              </div>
-            </div>
-          </Card>
+          <UpcomingEvents />
         </div>
 
         <div className="bg-orange-vivid-050 w-full mt-8 justify-center flex">
