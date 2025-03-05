@@ -1,16 +1,22 @@
 import { getPublicEvents } from "@/app/services/wa-events";
 import { Card } from "@/app/ui/shared/card";
+import { CalendarIcon } from "@heroicons/react/16/solid";
 
 export default async function PublicEvents() {
   const events = await getPublicEvents();
   return (
-    <Card title="Events">
+    <Card title="Public Events">
       <div>
         {events?.map(event => (
-          <div key={event.Id}>
-            <h4 className="font-bold text-lg">{event.Name}</h4>
+          <div key={event.Id} className="flex items-center gap-1">
+            <div className="w-12">
+              <CalendarIcon />
+            </div>
             <div>
-              {new Date(event.StartDate).toDateString()} | {event.Location}
+              <h4 className="font-bold text-lg">{event.Name}</h4>
+              <div>
+                {new Date(event.StartDate).toDateString()} | {event.Location}
+              </div>
             </div>
           </div>
         ))}

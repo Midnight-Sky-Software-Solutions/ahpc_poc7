@@ -33,7 +33,7 @@ export default function Home() {
                 Whether it’s Neapolitan, New York or Chicago Deep Dish, we have a place for you in our community.
               </p>
             </div>
-            <div className="bg-gray-200 w-full md:w-[50%] h-78 bg-[url('/pizza-small.jpg')] bg-cover">
+            <div className="bg-gray-200 w-full md:w-[50%] h-78 bg-[url('/pizza-small.jpg')] bg-cover bg-center">
             </div>
           </div>
         </div>
