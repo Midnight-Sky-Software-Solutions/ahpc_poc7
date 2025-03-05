@@ -1,5 +1,7 @@
+'use client'
 import { UserCircleIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems: { text: string, href: string }[] = [
   {
@@ -21,6 +23,7 @@ const navItems: { text: string, href: string }[] = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   return (
     <div className="flex justify-center shadow-md">
       <div className="max-w-6xl w-full flex flex-wrap items-center">
@@ -29,10 +32,10 @@ export default function Header() {
             AHPC
           </Link>
         </div>
-        <div className="grow hidden md:inline">
-          <ul className="flex gap-12 text-lg font-semibold">
+        <div className="grow hidden md:inline h-full">
+          <ul className="flex gap-12 text-lg font-semibold h-full">
             {navItems.map(item => (
-              <li key={item.text}>
+              <li key={item.text} className={`${item.href == pathname ? 'border-b-5' : ''} h-full items-center flex border-orange-vivid-500`}>
                 <Link href={item.href}>
                   {item.text}
                 </Link>
