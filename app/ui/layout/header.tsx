@@ -1,7 +1,8 @@
 'use client'
-import { UserCircleIcon } from "@heroicons/react/16/solid";
+import { Bars3Icon, UserCircleIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navItems: { text: string, href: string }[] = [
   {
@@ -24,10 +25,11 @@ const navItems: { text: string, href: string }[] = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   return (
     <div className="flex justify-center shadow-md">
       <div className="max-w-6xl w-full flex flex-wrap items-center">
-        <div className="py-4 pr-12">
+        <div className="pl-12 sm:pl-0 py-4 pr-12">
           <Link href="/" className="text-6xl text-orange-vivid-500 italic font-bold">
             AHPC
           </Link>
@@ -52,11 +54,31 @@ export default function Header() {
               Regular Member
             </div>
           </div>
-          
+
           <div className="w-16">
             <UserCircleIcon />
           </div>
         </div>
+        <div className="w-full justify-center flex md:hidden">
+          <button className="w-12"
+            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+          >
+            <Bars3Icon />
+          </button>
+        </div>
+        {mobileNavOpen ?
+          <div className="w-full md:hidden">
+            <ul className="flex flex-col text-lg font-semibold">
+              {navItems.map(item => (
+                <li key={item.text} className={`items-center flex justify-center border-orange-vivid-500 py-3`}>
+                  <Link href={item.href}>
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        :<></>}
       </div>
     </div>
   );
