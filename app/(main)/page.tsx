@@ -5,6 +5,7 @@ import { Card } from "../ui/shared/card";
 import { UpcomingEvents } from "@/app/ui/dashboard/upcoming-events";
 import DuesWarning from "@/app/ui/dashboard/dues-warning";
 import LatestNews from "../ui/dashboard/latest-news";
+import PublicEvents from "../ui/dashboard/public-events";
 
 export default function Home() {
   return (
@@ -46,22 +47,7 @@ export default function Home() {
           </div>
 
           <div className="w-full sm:w-[50%]">
-            <Card title="Events">
-              <div>
-                <div>
-                  <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
-                  <div>
-                    April 23, 2025 | Edmonton
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
-                  <div>
-                    April 23, 2025 | Edmonton
-                  </div>
-                </div>
-              </div>
-            </Card>
+            <PublicEvents />
           </div>
         </div>
 
