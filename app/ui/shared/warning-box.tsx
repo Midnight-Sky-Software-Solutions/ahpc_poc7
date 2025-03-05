@@ -1,5 +1,6 @@
 import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
 import { ReactNode } from "react";
+import { Button } from "./button";
 
 export function WarningBox({ children } : { children: ReactNode }) {
   return <div className="flex flex-col sm:flex-row bg-yellow-100 border-yellow-500 border-2 rounded-lg p-3 items-center gap-3">
@@ -9,6 +10,6 @@ export function WarningBox({ children } : { children: ReactNode }) {
     <div className="grow">
       {children}
     </div>
-    <button className="bg-yellow-500 text-white p-2 rounded-sm">Pay Now</button>
+    <Button text="Pay Now" />
   </div>
 }
