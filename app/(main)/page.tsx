@@ -1,9 +1,9 @@
 
-import { WarningBox } from "../ui/shared/warning-box";
 import Footer from "../ui/layout/footer";
 import { lateef } from "../ui/fonts";
 import { Card } from "../ui/shared/card";
 import { UpcomingEvents } from "@/app/ui/dashboard/upcoming-events";
+import DuesWarning from "@/app/ui/dashboard/dues-warning";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex flex-wrap justify-center w-full">
         <div className="max-w-6xl grow">
           <h2 className={`text-5xl py-5 ${lateef.className}`}>Home</h2>
-          <WarningBox>You have an oustanding invoice of <strong>$400.00</strong>.</WarningBox>
+          <DuesWarning />
         </div>
       </div>
 
