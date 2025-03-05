@@ -6,12 +6,15 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "genclient": "openapi-typescript ./wildapricot-openapi.yaml -o ./app/services/wa-client.d.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "iron-session": "^8.0.4",
     "next": "15.2.1",
+    "openapi-fetch": "^0.13.4",
+    "openapi-typescript": "^7.6.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
