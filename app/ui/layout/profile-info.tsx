@@ -1,8 +1,9 @@
-'use client'
+'use server'
 import { UserCircleIcon } from "@heroicons/react/16/solid";
 import { Button } from "../shared/button";
 import Link from "next/link";
 import { isAuthenticated } from "@/app/lib/session";
+import { getMe } from "@/app/services/wa-contacts";
 
 export default async function ProfileInfo() {
   const authenticated = await isAuthenticated();
@@ -10,22 +11,23 @@ export default async function ProfileInfo() {
     <>
       {
         authenticated ?
-          <ProfileInfoUnauthenticated />
+          <ProfileInfoAuthenticated />
           : <ProfileInfoUnauthenticated />
       }
     </>
   );
 }
 
-function ProfileInfoAuthenticated() {
+async function ProfileInfoAuthenticated() {
+  const me = await getMe();
   return (
     <div className="flex items-center justify-end grow">
       <div className="flex flex-col gap-1 pr-2">
         <div className="text-sm text-right">
-          Alex Johnston
+          {me?.FirstName} {me?.LastName}
         </div>
         <div className="text-xs text-right">
-          Regular Member
+          {me?.MembershipLevel?.Name ?? 'Unknown Member Type'}
         </div>
       </div>
 

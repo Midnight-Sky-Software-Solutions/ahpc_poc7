@@ -2,7 +2,7 @@
 import { Bars3Icon, UserCircleIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { Button } from "../shared/button";
 import ProfileInfo from "./profile-info";
 
@@ -26,7 +26,7 @@ const navItems: { text: string, href: string }[] = [
   },
 ];
 
-export default function Header() {
+export default function Header({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   return (
@@ -48,7 +48,7 @@ export default function Header() {
             ))}
           </ul>
         </div>
-        {/* <ProfileInfo /> */}
+        {children}
         <div className="w-full justify-center flex md:hidden">
           <button className="w-12"
             onClick={() => setMobileNavOpen(!mobileNavOpen)}
