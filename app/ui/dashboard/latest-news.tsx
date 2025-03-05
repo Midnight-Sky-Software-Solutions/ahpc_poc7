@@ -1,21 +1,19 @@
+import { getPostsFromWordpress } from "@/app/services/wp-service";
 import { Card } from "../shared/card";
 
 export default async function LatestNews() {
+  const news = await getPostsFromWordpress();
   return (
     <Card title="News">
       <div>
-        <div>
-          <h4 className="font-bold text-lg">Italian Style Pizza Bake off</h4>
+        {news.posts.map(post => (
           <div>
-            April 23, 2025 | Edmonton
+            <h4 className="font-bold text-lg">{post.title}</h4>
+            <div>
+              {new Date(post.date).toDateString()}
+            </div>
           </div>
-        </div>
-        <div>
-          <h4 className="font-bold text-lg">American Style Pizza Bake off</h4>
-          <div>
-            April 23, 2025 | Edmonton
-          </div>
-        </div>
+        ))}
       </div>
     </Card>
   );
