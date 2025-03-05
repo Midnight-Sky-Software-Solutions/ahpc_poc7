@@ -52,9 +52,9 @@ export default function Home() {
       </div>
 
       <div className="flex flex-wrap justify-center w-full">
-        <div className="flex max-w-6xl grow gap-3">
+        <div className="flex flex-wrap sm:flex-nowrap max-w-6xl grow sm:gap-3">
 
-          <div className="w-[50%]">
+          <div className="w-full sm:w-[50%]">
             <Card title="News">
               <div>
                 <div>
@@ -73,7 +73,7 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="w-[50%]">
+          <div className="w-full sm:w-[50%]">
             <Card title="Events">
               <div>
                 <div>
