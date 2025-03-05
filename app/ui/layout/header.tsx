@@ -96,7 +96,7 @@ function ProfileInfoUnauthenticated() {
   return (
     <div className="grow flex justify-end gap-2">
       <Button text="Sign Up" />
-      <Button text="Login" />
+      <Link href="/auth/login"><Button text="Login" /></Link>
     </div>
   );
 }
