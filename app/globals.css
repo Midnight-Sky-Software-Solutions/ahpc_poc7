@@ -52,3 +52,15 @@ body {
   --color-cool-grey-800: #323F4B;
   --color-cool-grey-900: #1F2933;
 }
+
+@theme {
+  --animate-fadein: fadein 0.5s ease-in;
+  @keyframes fadein {
+    0% {
+      opacity: 0%;
+    },
+    100% {
+      opacity: 100%;
+    }
+  }
+}

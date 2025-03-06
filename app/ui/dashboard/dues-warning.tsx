@@ -6,7 +6,7 @@ export default async function DuesWarning() {
   return (
     <>
       {!!duesInvoice ?
-        <WarningBox>You have an oustanding invoice of <strong>${duesInvoice.Value}</strong>.</WarningBox>
+        <WarningBox className="animate-fadein">You have an oustanding invoice of <strong>${duesInvoice.Value}</strong>.</WarningBox>
         : <></>
       }
     </>
