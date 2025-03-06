@@ -10,6 +10,7 @@
     "genclient": "openapi-typescript ./wildapricot-openapi.yaml -o ./app/services/wa-client.d.ts"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "iron-session": "^8.0.4",
     "next": "15.2.1",
