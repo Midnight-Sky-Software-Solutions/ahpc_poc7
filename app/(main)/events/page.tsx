@@ -1,6 +1,6 @@
 import { getEvents } from "@/app/services/wa-events";
+import Event from "@/app/ui/events/event";
 import { lateef } from "@/app/ui/fonts";
-import { CalendarIcon } from "@heroicons/react/16/solid";
 
 export default async function Page() {
   const events = await getEvents();
@@ -10,25 +10,14 @@ export default async function Page() {
         <h2 className={`text-5xl py-5 ${lateef.className}`}>Events</h2>
         <div className="flex flex-col gap-8">
           {events?.map(event => (
-            <div key={event.Id} className="flex items-center gap-1">
-              <div className="w-12 text-orange-vivid-400">
-                <CalendarIcon />
-              </div>
-              <div className="grow">
-                <h4 className="font-bold text-lg">{event.Name}</h4>
-                <div>
-                  {new Date(event.StartDate).toDateString()} | {event.Location}
-                </div>
-              </div>
-              <div>
-                <button 
-                  className={`${event.registered? 'bg-yellow-500' : 'bg-cool-grey-200'} 
-                  text-white p-2 rounded-sm`}
-                  disabled={event.registered}>
-                    RSVP
-                  </button>
-              </div>
-            </div>
+            <Event
+              key={event.Id}
+              eventId={event.Id}
+              name={event.Name}
+              date={new Date(event.StartDate)}
+              location={event.Location}
+              registered={event.registered}
+            />
           ))}
         </div>
       </div>
