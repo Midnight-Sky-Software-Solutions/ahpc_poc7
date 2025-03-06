@@ -3,16 +3,32 @@ import { createContact } from "@/app/services/wa-contacts";
 import { ApiError } from "@/app/services/wa-client";
 import { redirect } from "next/navigation";
 
+import { z } from "zod";
+
+const signUpSchema = z.object({
+  firstName: z.string().nonempty(),
+  lastName: z.string().nonempty(),
+  email: z.string().nonempty(),
+  password1: z.string().nonempty()
+})
+
 export async function submitJoinForm(_prevState, formData: FormData) {
   if (formData.get('password1')?.valueOf() != formData.get('password2')?.valueOf()) {
     return { message: 'Passwords do not match', details: [] }
   }
   try {
+    const validatedForm = signUpSchema.safeParse(Object.fromEntries(formData));
+    if (!validatedForm.success) {
+      return {
+        message: 'Please fill in all fields.'
+      }
+    }
+    const validatedFormData = validatedForm.data!;
     await createContact({
-      firstName: formData.get('firstName')?.valueOf() as string,
-      lastName: formData.get('lastName')?.valueOf() as string,
-      email: formData.get('email')?.valueOf() as string,
-      password: formData.get('password1')?.valueOf() as string
+      firstName: validatedFormData.firstName!,
+      lastName: validatedFormData.lastName!,
+      email: validatedFormData.email!,
+      password: validatedFormData.password1!
     });
   } catch (e) {
     if (e instanceof ApiError) {
