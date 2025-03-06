@@ -60,3 +60,16 @@ export async function POST(req: Request) {
 
   return new Response("", { status: 200 });
 }
+
+export async function DELETE() {
+  const cookieStore = await cookies();
+  const session = await getIronSession(cookieStore, {
+    password: process.env.SESSION_PASSWORD!,
+    cookieName: 'AHPC_SESSION'
+  });
+
+  cookieStore.delete('authenticated');
+  session.destroy()
+
+  return new Response("", { status: 200 });
+}
