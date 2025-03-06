@@ -9,7 +9,7 @@ export default async function PublicEvents() {
       <div>
         {events?.map(event => (
           <div key={event.Id} className="flex items-center gap-1">
-            <div className="w-12 text-orange-vivid-500">
+            <div className="w-12 text-orange-vivid-400">
               <CalendarIcon />
             </div>
             <div>
