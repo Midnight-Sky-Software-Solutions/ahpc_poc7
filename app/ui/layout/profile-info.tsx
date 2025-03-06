@@ -41,7 +41,7 @@ async function ProfileInfoAuthenticated() {
 function ProfileInfoUnauthenticated() {
   return (
     <div className="grow flex justify-end gap-2">
-      <Button text="Sign Up" />
+      <Link href="/join"><Button text="Sign Up" /></Link>
       <Link href="/auth/login"><Button text="Login" /></Link>
     </div>
   );
