@@ -1,5 +1,6 @@
 import { getPostsFromWordpress } from "@/app/services/wp-service";
 import { lateef } from "@/app/ui/fonts";
+import Link from "next/link";
 
 export default async function Page({
   searchParams,
@@ -15,7 +16,7 @@ export default async function Page({
         <div>
         {news.posts.map(post => (
           <div key={post.slug} className="flex flex-col gap-1">
-            <h4 className="font-bold text-lg">{post.title}</h4>
+            <h4 className="font-bold text-lg"><Link href={`/news/${post.slug}`}>{post.title}</Link></h4>
             <div className="text-cool-grey-600">
               {new Date(post.date).toDateString()}
             </div>
