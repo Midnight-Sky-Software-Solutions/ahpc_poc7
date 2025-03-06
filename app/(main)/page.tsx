@@ -1,29 +1,36 @@
 
 import Footer from "../ui/layout/footer";
 import { lateef } from "../ui/fonts";
-import { UpcomingEvents } from "@/app/ui/dashboard/upcoming-events";
+import { UpcomingEvents, UpcomingEventsSkeleton } from "@/app/ui/dashboard/upcoming-events";
 import DuesWarning from "@/app/ui/dashboard/dues-warning";
 import LatestNews from "../ui/dashboard/latest-news";
 import PublicEvents from "../ui/dashboard/public-events";
 import { isAuthenticated } from "../lib/session";
+import { Suspense } from "react";
 
 export default async function Home() {
   const authenticated = await isAuthenticated();
   return (
     <>
-      {authenticated ?
+      
         <div className="flex flex-wrap justify-center w-full">
           <div className="max-w-6xl grow">
             <h2 className={`text-5xl py-5 ${lateef.className}`}>Home</h2>
-            <DuesWarning />
+            {authenticated ?
+              <Suspense>
+                <DuesWarning />
+              </Suspense>
+              : <></>
+            }
           </div>
         </div> : <></>
-      }
 
       {authenticated ?
         <div className="flex flex-wrap justify-center w-full">
           <div className="max-w-6xl w-full">
-            <UpcomingEvents />
+            <Suspense fallback={<UpcomingEventsSkeleton />}>
+              <UpcomingEvents />
+            </Suspense>
           </div>
 
 
@@ -50,11 +57,15 @@ export default async function Home() {
         <div className="flex flex-wrap sm:flex-nowrap max-w-6xl grow sm:gap-3">
 
           <div className="w-full sm:w-[50%]">
-            <LatestNews />
+            <Suspense>
+              <LatestNews />
+            </Suspense>
           </div>
 
           <div className="w-full sm:w-[50%]">
-            <PublicEvents />
+            <Suspense>
+              <PublicEvents />
+            </Suspense>
           </div>
         </div>
 

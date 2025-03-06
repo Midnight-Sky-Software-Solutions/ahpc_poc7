@@ -1,6 +1,7 @@
 import { accountId } from "@/ahpc.config";
 import { getSession } from "../lib/session";
 import waclient from "./wa-client";
+import { unstable_cache } from "next/cache";
 
 async function eventRegistrations(contactId: number) {
   const { data: existingRegistrations } = await waclient.GET('/accounts/{accountId}/eventregistrations', {
@@ -15,6 +16,7 @@ async function eventRegistrations(contactId: number) {
   });
   return existingRegistrations;
 }
+
 
 export async function getEventRegistrations() {
   const session = await getSession();

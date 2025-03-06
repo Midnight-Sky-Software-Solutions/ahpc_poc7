@@ -1,5 +1,6 @@
 import { getEventRegistrations } from "@/app/services/wa-events";
 import { Card } from "@/app/ui/shared/card";
+import Spinner from "../shared/spinner";
 
 export async function UpcomingEvents() {
   const registrations = await getEventRegistrations();
@@ -14,6 +15,16 @@ export async function UpcomingEvents() {
             </div>
           </div>
         ))}
+      </div>
+    </Card>
+  );
+}
+
+export function UpcomingEventsSkeleton() {
+  return (
+    <Card title={"Your Upcoming Events"}>
+      <div className="flex flex-col gap-3">
+        <Spinner />
       </div>
     </Card>
   );
