@@ -6,11 +6,11 @@ export async function UpcomingEvents() {
   return (
     <Card title={"Your Upcoming Events"}>
       <div className="flex flex-col gap-3">
-        {registrations.map(reg => (
+        {registrations!.map(reg => (
           <div key={reg.Id}>
             <h4 className="font-bold text-lg">{reg.Event.Name}</h4>
             <div>
-              { new Date(reg.Event.StartDate).toDateString() } | {reg.Event.Location}
+              { new Date(reg.Event.StartDate || '').toDateString() } | {reg.Event.Location}
             </div>
           </div>
         ))}
