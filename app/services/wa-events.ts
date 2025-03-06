@@ -20,9 +20,17 @@ async function eventRegistrations(contactId: number) {
 
 export async function getEventRegistrations() {
   const session = await getSession();
-  const registrations = await eventRegistrations(session.contactId);
+  const registrations = await eventRegistrationsCached(session.contactId);
   return registrations;
 }
+
+const eventRegistrationsCached = unstable_cache(
+  async (contactId: number) => {
+    return await eventRegistrations(contactId)
+  },
+  ['eventregistrations'],
+  { revalidate: 3600, tags: ['eventregistrations']}
+)
 
 export async function getPublicEvents() {
   const { data } = await waclient.GET('/accounts/{accountId}/events', {

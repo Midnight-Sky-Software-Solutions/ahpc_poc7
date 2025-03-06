@@ -7,7 +7,7 @@ export default async function LatestNews() {
     <Card title="News">
       <div>
         {news.posts.map(post => (
-          <div key={post.slug}>
+          <div key={post.slug} className="animate-fadein">
             <h4 className="font-bold text-lg">{post.title}</h4>
             <div>
               {new Date(post.date).toDateString()}

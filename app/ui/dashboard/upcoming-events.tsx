@@ -8,7 +8,7 @@ export async function UpcomingEvents() {
     <Card title={"Your Upcoming Events"}>
       <div className="flex flex-col gap-3">
         {registrations!.map(reg => (
-          <div key={reg.Id}>
+          <div key={reg.Id} className="animate-fadein">
             <h4 className="font-bold text-lg">{reg.Event.Name}</h4>
             <div>
               { new Date(reg.Event.StartDate || '').toDateString() } | {reg.Event.Location}
@@ -23,7 +23,7 @@ export async function UpcomingEvents() {
 export function UpcomingEventsSkeleton() {
   return (
     <Card title={"Your Upcoming Events"}>
-      <div className="flex flex-col gap-3">
+      <div className="flex justify-center">
         <Spinner />
       </div>
     </Card>

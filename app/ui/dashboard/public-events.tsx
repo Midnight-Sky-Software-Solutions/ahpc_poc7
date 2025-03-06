@@ -8,7 +8,7 @@ export default async function PublicEvents() {
     <Card title="Public Events">
       <div>
         {events?.map(event => (
-          <div key={event.Id} className="flex items-center gap-1">
+          <div key={event.Id} className="flex items-center gap-1 animate-fadein">
             <div className="w-12 text-orange-vivid-400">
               <CalendarIcon />
             </div>
