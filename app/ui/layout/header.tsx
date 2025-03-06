@@ -1,10 +1,8 @@
 'use client'
-import { Bars3Icon, UserCircleIcon } from "@heroicons/react/16/solid";
+import { Bars3Icon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useState } from "react";
-import { Button } from "../shared/button";
-import ProfileInfo from "./profile-info";
 
 
 const navItems: { text: string, href: string }[] = [

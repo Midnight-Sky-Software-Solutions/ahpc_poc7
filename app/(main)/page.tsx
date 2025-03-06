@@ -1,7 +1,6 @@
 
 import Footer from "../ui/layout/footer";
 import { lateef } from "../ui/fonts";
-import { Card } from "../ui/shared/card";
 import { UpcomingEvents } from "@/app/ui/dashboard/upcoming-events";
 import DuesWarning from "@/app/ui/dashboard/dues-warning";
 import LatestNews from "../ui/dashboard/latest-news";
