@@ -1,5 +1,4 @@
 
-import Footer from "../ui/layout/footer";
 import { lateef } from "../ui/fonts";
 import { UpcomingEvents, UpcomingEventsSkeleton } from "@/app/ui/dashboard/upcoming-events";
 import DuesWarning from "@/app/ui/dashboard/dues-warning";
@@ -69,8 +68,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <Footer />
-
+        
       </div>
 
     </>

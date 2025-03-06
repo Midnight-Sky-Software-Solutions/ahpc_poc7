@@ -1,5 +1,6 @@
 import Header from "@/app/ui/layout/header";
 import ProfileInfo from "../ui/layout/profile-info";
+import Footer from "../ui/layout/footer";
 
 export default async function MainLayout({
   children
@@ -12,6 +13,8 @@ export default async function MainLayout({
         <ProfileInfo />
       </Header>
       { children }
+      <Footer />
+
     </>
   );
 }
