@@ -18,7 +18,7 @@ export async function getSession(): Promise<AhpcSession> {
     cookieName: 'AHPC_SESSION'
   });
   if (!session.contactId) {
-    redirect('/login',);
+    redirect('/auth/login',);
   }
   return session;
 }
