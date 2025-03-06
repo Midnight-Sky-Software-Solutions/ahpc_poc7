@@ -33,7 +33,7 @@ async function ProfileInfoAuthenticated() {
 
       <div className="w-16 relative group">
         <UserCircleIcon />
-        <div className="invisible group-hover:visible absolute -bottom-10 left-[-10em] z-10 mt-2 w-56 origin-top-right rounded-md py-1 bg-white">
+        <div className="shadow-md invisible group-hover:visible absolute -bottom-10 left-[-10em] z-10 mt-2 w-56 origin-top-right rounded-md py-1 bg-white">
           <Link
             href="/auth/logout"
             className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
